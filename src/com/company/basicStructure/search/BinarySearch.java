@@ -1,7 +1,6 @@
-package com.company.basicStructure;
+package com.company.basicStructure.search;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 /**
  * 二分查找

@@ -1,24 +1,17 @@
 package com.company;
 
-import java.util.LinkedList;
-import java.util.ListIterator;
+import java.util.*;
 
 public class Mian {
     public static void main(String[] args) {
-        LinkedList<String> staff = new LinkedList<>();
-        staff.add("asdsa");
-        staff.add("qwe");
-        staff.add("xxxx");
 
-        ListIterator<String> stringListIterator = staff.listIterator();
-        ListIterator<String> stringListIterator1 = staff.listIterator();
 
-        stringListIterator.next();
-        stringListIterator.remove();
-        stringListIterator1.next();
+        Integer[] a = {1,2,3};
+        List<Integer> integers = Arrays.asList(a);
 
-        for (String c: staff){
+        for (int c:integers){
             System.out.println(c);
         }
+
     }
 }
