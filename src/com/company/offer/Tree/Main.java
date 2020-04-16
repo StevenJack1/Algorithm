@@ -6,17 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-/**
- * 二叉树节点的定义
- */
-class TreeNode {
-    int value;
-    TreeNode leftChild;
-    TreeNode rightChild;
-    public TreeNode(int value) {
-        this.value = value;
-    }
-}
 
 
 public class Main {
