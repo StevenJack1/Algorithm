@@ -61,7 +61,7 @@ public class Main {
     }
 
     /**
-     * 后序遍历，非递归
+     * zhong序遍历，非递归
      * @param treeNode
      */
     public static void inOrderNon(TreeNode treeNode){

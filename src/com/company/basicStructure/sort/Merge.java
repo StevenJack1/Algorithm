@@ -39,10 +39,7 @@ public class Merge {
 
 
     public static void sort(int[] a,int left,int right,int[] temp){
-        if (a == null){
-            return;
-        }
-        if (right <0){
+        if (a == null || right <0){
             return;
         }
         if (left == right){

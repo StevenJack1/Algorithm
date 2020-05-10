@@ -35,25 +35,5 @@ public class Test17 {
 
     }
 
-    public static void main(String[] args) {
-        ListNode listNode = new ListNode();
-        ListNode listNode1 = new ListNode();
-        ListNode listNode2 = new ListNode();
-        ListNode listNode3 = new ListNode();
-        ListNode listNode4 = new ListNode();
-        listNode.value = 1;
-        listNode1.value = 2;
-        listNode2.value = 3;
-        listNode3.value = 4;
-        listNode4.value = 5;
-        listNode.next = listNode1;
-        listNode1.next = listNode2;
-        listNode2.next = listNode3;
-        listNode3.next = listNode4;
-        listNode4.next = null;
-        test17(listNode);
-
-
-    }
 
 }
