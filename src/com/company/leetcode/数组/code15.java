@@ -1,0 +1,67 @@
+package com.company.leetcode.数组;
+
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
+/**
+ * 15. 三数之和
+ * 给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？
+ * 请你找出所有满足条件且不重复的三元组。
+ *
+ * 注意：答案中不可以包含重复的三元组。
+ *
+ * 示例：
+ * 给定数组 nums = [-1, 0, 1, 2, -1, -4]，
+ * 满足要求的三元组集合为：
+ * [
+ *   [-1, 0, 1],
+ *   [-1, -1, 2]
+ * ]
+ */
+public class code15 {
+
+    public List<List<Integer>> threeSum(int[] nums) {
+        List<List<Integer>> res = new LinkedList<>();
+
+        Arrays.sort(nums);
+        int len = nums.length;
+        for (int i = 0; i < len; i++) {
+            int cur = nums[i];
+            if (cur > 0){
+                break;
+            }
+            if (i > 0 && nums[i] == nums[i-1]){
+                continue;
+            }
+            int left = i + 1;
+            int right = len - 1;
+            while (left < right){
+                int sum = cur + nums[left] + nums[right];
+                if (sum == 0){
+                    res.add(Arrays.asList(cur,nums[left],nums[right]));
+                    while (left < right && nums[left] == nums[left+1]) {
+                        left++;
+                    }
+                    while (left < right && nums[right] == nums[right-1]){
+                        right--;
+                    }
+                    left++;
+                    right--;
+                } else if (sum < 0){
+                    left++;
+                } else {
+                    right--;
+                }
+            }
+        }
+        return res;
+    }
+
+    public static void main(String[] args) {
+        code15 code15 = new code15();
+        int[] nums = {-1, 0, 1, 2, -1, -4};
+        code15.threeSum(nums);
+    }
+
+}
