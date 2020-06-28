@@ -18,12 +18,4 @@ public class Insertion {
             }
         }
     }
-
-    public static void main(String[] args) {
-        int[] a = {2,12,34,1,7,4,112};
-        sort(a);
-        for (int c:a){
-            System.out.println(c);
-        }
-    }
 }

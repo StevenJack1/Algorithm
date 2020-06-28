@@ -8,11 +8,12 @@ package com.company.basicStructure.sort;
  */
 public class Merge {
 
-    public static void merge(int[] a,int left,int middle,int right,int[] temp){
-
+    public static void merge(int[] a,int left,int middle,int right){
+        int [] temp = new int[a.length];
         int i = left;
         int j = middle+1;
-        int t = 0;
+        int t = left;
+
         while (i<=middle && j<=right){
             if(a[i]<=a[j]){
                 temp[t++] = a[i++];
@@ -26,38 +27,25 @@ public class Merge {
         while(j<=right){
             temp[t++] = a[j++];
         }
-        System.out.println("left:"+left+ "middle:"+middle+ "right:"+right);
 
-        t = 0;
-
-        while(left <= right){
-            a[left++] = temp[t++];
+        //复制回原数组
+        for (int k = left; k <= right; k++) {
+            a[k] = temp[k];
         }
-
     }
 
-
-
-    public static void sort(int[] a,int left,int right,int[] temp){
-        if (a == null || right <0){
-            return;
-        }
-        if (left == right){
-            return;
-        } else {
+    public static void sort(int[] a,int left,int right){
+        if (left < right) {
             int middle = (left+right)/2;
-            sort(a,left,middle,temp);
-            sort(a,middle+1,right,temp);
-            merge(a,left,middle,right,temp);
+            sort(a,left,middle);
+            sort(a,middle+1,right);
+            merge(a,left,middle,right);
         }
-
     }
 
     public static void main(String[] args) {
         int[] a = {2,12,34,1,7,4,112};
-        int len = a.length;
-        int[] temp = new int[len];
-        sort(a,0,len-1,temp);
+        sort(a,0,a.length-1);
         for (int c:a){
             System.out.println(c);
         }

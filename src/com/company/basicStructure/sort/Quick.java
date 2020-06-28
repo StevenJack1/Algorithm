@@ -32,9 +32,6 @@ public class Quick {
 
 
     public static void sort(int[] a,int left,int right){
-        if (a==null){
-            return;
-        }
         if (left < right){
             int middle = partition(a,left,right);
             sort(a,left,middle-1);
