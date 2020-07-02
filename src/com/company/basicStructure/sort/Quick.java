@@ -21,7 +21,7 @@ public class Quick {
                 right--;
             }
             a[left] = a[right];
-            while (a[left] <= temp && left < right){
+            while (a[left] < temp && left < right){
                 left++;
             }
             a[right] = a[left];
