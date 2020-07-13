@@ -24,17 +24,16 @@ package com.company.leetcode.动态规划;
 public class code70 {
 
     public int climbStairs(int n) {
-        if (n < 0){
-            return -1;
-        }
-        if (n == 1){
+        if (n <= 1){
             return 1;
         }
-        int res = 0;
-
-
-
-        return res;
+        int[] dp = new int[n+1];
+        dp[1] = 1;
+        dp[2] = 2;
+        for (int i = 3; i <= n; i++) {
+            dp[i] = dp[i-1] + dp[i-2];
+        }
+        return dp[n];
     }
 
 }
