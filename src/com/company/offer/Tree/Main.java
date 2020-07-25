@@ -34,12 +34,11 @@ public class Main {
     public static void preOrderNon(TreeNode treeNode){
         Stack<TreeNode> stack = new Stack<>();
         while (treeNode != null || !stack.isEmpty()){
-            while (treeNode != null){
+            if (treeNode != null){
                 preOrderList.add(treeNode.value);
                 stack.push(treeNode);
                 treeNode = treeNode.leftChild;
-            }
-            if (!stack.isEmpty()){
+            } else {
                 treeNode = stack.pop();
                 treeNode = treeNode.rightChild;
             }
@@ -67,11 +66,10 @@ public class Main {
     public static void inOrderNon(TreeNode treeNode){
         Stack<TreeNode> stack = new Stack<>();
         while (treeNode != null || !stack.isEmpty()){
-            while (treeNode != null){
+            if (treeNode != null){
                 stack.push(treeNode);
                 treeNode = treeNode.leftChild;
-            }
-            if (!stack.isEmpty()){
+            } else {
                 treeNode = stack.pop();
                 inOrderList.add(treeNode.value);
                 treeNode = treeNode.rightChild;
@@ -102,12 +100,11 @@ public class Main {
         Stack<TreeNode> stack = new Stack<>();
         Stack<Integer> stack2 = new Stack<>();
         while (treeNode != null || !stack.isEmpty()){
-            while (treeNode != null){
+            if (treeNode != null){
                 stack2.push(treeNode.value);
                 stack.push(treeNode);
                 treeNode = treeNode.rightChild;
-            }
-            if (!stack.isEmpty()){
+            } else {
                 treeNode = stack.pop();
                 treeNode = treeNode.leftChild;
             }
