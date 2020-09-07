@@ -38,10 +38,4 @@ public class code78 {
         }
     }
 
-
-    public static void main(String[] args){
-        int[] nums={1,2,3};
-        (new code78()).subsets(nums);
-    }
-
 }
